@@ -1,19 +1,31 @@
 /**
-* Template Name: Selecao - v3.0.0
-* Template URL: https://bootstrapmade.com/selecao-bootstrap-template/
+* Template Name: Techie - v3.0.0
+* Template URL: https://bootstrapmade.com/techie-free-skin-bootstrap-3/
 * Author: BootstrapMade.com
 * License: https://bootstrapmade.com/license/
 */
 !(function($) {
   "use strict";
 
+  // Preloader
+  $(window).on('load', function() {
+    if ($('#preloader').length) {
+      $('#preloader').delay(100).fadeOut('slow', function() {
+        $(this).remove();
+      });
+    }
+  });
+
   // Smooth scroll for the navigation menu and links with .scrollto classes
-  var scrolltoOffset = $('#header').outerHeight() - 1;
+  var scrolltoOffset = $('#header').outerHeight() - 16;
+  if (window.matchMedia("(max-width: 991px)").matches) {
+    scrolltoOffset += 16;
+  }
   $(document).on('click', '.nav-menu a, .mobile-nav a, .scrollto', function(e) {
     if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+      e.preventDefault();
       var target = $(this.hash);
       if (target.length) {
-        e.preventDefault();
 
         var scrollto = target.offset().top - scrolltoOffset;
 
@@ -124,14 +136,6 @@
     $('#header').addClass('header-scrolled');
   }
 
-  // Intro carousel
-  var heroCarousel = $("#heroCarousel");
-
-  heroCarousel.on('slid.bs.carousel', function(e) {
-    $(this).find('h2').addClass('animate__animated animate__fadeInDown');
-    $(this).find('p, .btn-get-started').addClass('animate__animated animate__fadeInUp');
-  });
-
   // Back to top button
   $(window).scroll(function() {
     if ($(this).scrollTop() > 100) {
@@ -146,6 +150,30 @@
       scrollTop: 0
     }, 1500, 'easeInOutExpo');
     return false;
+  });
+
+  // jQuery counterUp
+  $('[data-toggle="counter-up"]').counterUp({
+    delay: 10,
+    time: 1000
+  });
+
+  // Testimonials carousel (uses the Owl Carousel library)
+  $(".testimonials-carousel").owlCarousel({
+    autoplay: true,
+    dots: true,
+    loop: true,
+    responsive: {
+      0: {
+        items: 1
+      },
+      768: {
+        items: 2
+      },
+      900: {
+        items: 3
+      }
+    }
   });
 
   // Porfolio isotope and filter
@@ -170,24 +198,6 @@
     });
   });
 
-  // Testimonials carousel (uses the Owl Carousel library)
-  $(".testimonials-carousel").owlCarousel({
-    autoplay: true,
-    dots: true,
-    loop: true,
-    responsive: {
-      0: {
-        items: 1
-      },
-      768: {
-        items: 2
-      },
-      900: {
-        items: 3
-      }
-    }
-  });
-
   // Portfolio details carousel
   $(".portfolio-details-carousel").owlCarousel({
     autoplay: true,
@@ -200,9 +210,7 @@
   function aos_init() {
     AOS.init({
       duration: 1000,
-      easing: "ease-in-out",
-      once: true,
-      mirror: false
+      once: true
     });
   }
   $(window).on('load', function() {
