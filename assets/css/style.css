@@ -10,6 +10,7 @@
 --------------------------------------------------------------*/
 body {
   font-family: "Open Sans", sans-serif;
+  font-weight: lighter !important;
   color: #444444;
 }
 
@@ -30,6 +31,7 @@ h4,
 h5,
 h6 {
   font-family: "Montserrat", sans-serif;
+  font-weight: lighter !important;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -659,6 +661,7 @@ section {
   font-weight: 700;
   text-transform: uppercase;
   font-family: "Poppins", sans-serif;
+  font-weight: lighter !important;
   color: #663399;
 }
 
