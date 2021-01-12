@@ -1052,9 +1052,8 @@ section {
 }
 
 .testimonials .testimonial-item .testimonial-img {
-  width: 100px;
-  border-radius: 50%;
-  border: 6px solid rgba(255, 255, 255, 0.15);
+  /* border-radius: 50%; */
+  border: transparent;
   margin: 0 auto;
 }
 
@@ -1094,6 +1093,11 @@ section {
   font-style: italic;
   margin: 0 auto 15px auto;
   color: #eee;
+}
+
+.testimonials .testimonial-item img {
+  width: 15%;
+  height: 15%;
 }
 
 .testimonials .owl-nav,
