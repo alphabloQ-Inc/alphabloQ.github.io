@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: abq-website-service
+spec:
+  selector:
+    app: nginx
+    tier: website
+  type: NodePort
+  ports:
+    - name: abq-web-n-port
+      port: 80
+      targetPort: 80

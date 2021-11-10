@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: abq-website
+spec:
+  selector:
+    matchLabels:
+      app: nginx
+      tier: website
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: nginx
+        tier: website
+    spec:
+      containers:
+      - name: abq-web
+        image: wankenobi/abq-web:latest
+        resources:
+           limits:
+             memory: 200Mi
+             cpu: 300m
+           requests:
+             memory: 100Mi
+             cpu: 100m
+        ports:
+        - containerPort: 80
+          name: abq-web-http
+        readinessProbe:
+          httpGet:
+            scheme: HTTP
+            path: /index.html
+            port: 80
+          initialDelaySeconds: 10
+          periodSeconds: 5

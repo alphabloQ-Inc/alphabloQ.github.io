@@ -1,0 +1,14 @@
+namespace: insider-abq-website
+namePrefix: insider-
+bases:
+  - ../../base
+images:
+  - name: wankenobi/abq-web
+    newTag: latest
+# patchesJson6902:
+#   - path: ing-patch.yml
+#     target:
+#       group: ""
+#       kind: Ingress
+#       name: abq-website-ingress
+#       version: v1

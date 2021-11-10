@@ -1,0 +1,11 @@
+namespace: abq-website
+commonLabels:
+  org: alphabloq
+  app: aurora
+  tier: website
+resources:
+  - namespace.yml
+  - deployment.yml
+  - service.yml
+  - ingress.yml
+  - cert.yml
