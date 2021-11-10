@@ -1,4 +1,4 @@
-namespace: abq-website
+namespace: abq
 commonLabels:
   org: alphabloq
   app: aurora
