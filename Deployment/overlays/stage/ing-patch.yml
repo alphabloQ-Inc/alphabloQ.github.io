@@ -1,3 +1,7 @@
 - op: replace
   path: /spec/rules/http/paths/0/backend/service/name
   value: abq-website-service-stage
+
+- op: replace
+  path: /spec/tls/secretName
+  value: stage-abq-web-tls

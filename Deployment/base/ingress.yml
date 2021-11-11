@@ -9,11 +9,11 @@ metadata:
     cert-manager.io/cluster-issuer: abq-ca
     acme.cert-manager.io/http01-edit-in-place: "true"
 spec:
-  # tls:
-  #   - hosts:
-  #       - alphabloq.tech
-  #       - www.alphabloq.tech
-  #     secretName: abq-cert-tls
+  tls:
+    - hosts:
+        - alphabloq.tech
+        - www.alphabloq.tech
+      secretName: abq-web-tls
   rules:
   - host: alphabloq.tech
     http:
